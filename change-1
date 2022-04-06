@@ -1,0 +1,104 @@
+QUESTION 1
+
+app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title:string="PRODUCT INFORMATION";
+ productTitle:string="SAMSUNG";
+ productPrice:number=12000;
+ stock:number=5;
+ imgloc:string='../assets/samsung.jpeg';
+
+
+
+}
+
+app.component.html
+<div style="text-align: center;"><h1>{{title}}</h1></div>
+
+<div  style="margin-left:35000px;" class="card" style="width:18rem;">
+ 
+    <img class="card-img-top" [src]="imgloc" width="20%" height="20%" />
+   
+ 
+  <div class="card-body">
+    <h4>Category:{{ productTitle}}</h4>
+    <h4>Price:{{productPrice | currency:"INR" }}</h4>
+    <h4>Stock:{{stock}}</h4>
+    <a href="#" class="bg success">button</a>
+  </div>
+
+</div>
+
+
+Question 2
+
+app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  
+}
+ 
+ app.component.html
+ <div style="text-align:center">
+ <h3 style="text-align: center;">MULTIPLE COMPONENTS</h3>
+ <div><app-usa></app-usa></div>
+ 
+ app.component.css
+ .class1{
+    background-color: black;
+
+}
+.class2{
+    background-color: bisque;
+}
+
+usa.component.html
+<div class="container" style="color:white;background-color:black;height: 100%;width: 100%; ">
+  <div class="class1">
+    <h3 style="text-align:center">United States</h3>
+  </div>
+  <div class="class3" id="class3"style="color:black;background-color:bisque;height:400px;width:400px;">
+    <div><app-new-york></app-new-york></div>
+    
+  </div>
+  <div class="class2" id="class2" style="color:black;background-color:bisque;height:400px;width:400px;">
+<div><app-washington></app-washington></div>
+  </div>
+</div>
+
+usa.component.css
+#class2{
+    float: right;
+    margin-right: 250px;
+    height: 500px;
+    width: 350px
+}
+#class3{
+    float: left;
+   margin-left: 250px;
+    height: 500px;
+    width: 350px
+}
+newyork.component.html
+
+<div class="class2">
+  <h4>NEW YORK</h4>
+</div>
+
+washinton.component.html
+<div class="class2">
+  <h4>WASHINGTON</h4>
+</div>
